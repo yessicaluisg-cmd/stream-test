@@ -26,7 +26,9 @@
         #btnRojo { background-color: red; }
         #btnVerde { background-color: green; }
         #btnAzul { background-color: blue; }
-        
+        #videoContainer {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -36,36 +38,36 @@
                 <img  src="https://www.canaldelcongreso.gob.mx/images/logo-canal-congreso.png" whidth="506" height="100" alt="">
                 
             </a>
+            <!-- Botones -->
             <button id="btnRojo">Video Rojo</button>
             <button id="btnVerde">Video Verde</button>
             <button id="btnAzul">Video Azul</button>
-             <!-- Contenedor del video -->
-    <br><br>
-    <video id="videoPlayer" width="500" controls>
-        <source src="video1.mp4" type="video/mp4">
-        Tu navegador no soporta video HTML5.
-    </video>
+        
+            <!-- Contenedor donde se cargará el iframe -->
+            <div id="videoContainer"></div>
+        
+            <script>
+                document.getElementById("btnRojo").onclick = function () {
+                    document.getElementById("videoContainer").innerHTML = `
+                                <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fyessi.luis.225262%2Fvideos%2F1213818794135993%2F&width=1280" width="1280" height="720" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
 
-    <script>
-        // Cambiar video según el botón
-        document.getElementById("btnRojo").onclick = function () {
-            cambiarVideo("video1.mp4");
-        };
+                    `;
+                };
+        
+                document.getElementById("btnVerde").onclick = function () {
+                    document.getElementById("videoContainer").innerHTML = `
+                                <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fyessi.luis.225262%2Fvideos%2F1213818794135993%2F&width=1280" width="1280" height="720" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
 
-        document.getElementById("btnVerde").onclick = function () {
-            cambiarVideo("video2.mp4");
-        };
+                    `;
+                };
+        
+                document.getElementById("btnAzul").onclick = function () {
+                    document.getElementById("videoContainer").innerHTML = `
+                                <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fyessi.luis.225262%2Fvideos%2F1213818794135993%2F&width=1280" width="1280" height="720" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
 
-        document.getElementById("btnAzul").onclick = function () {
-            cambiarVideo("video3.mp4");
-        };
-
-        function cambiarVideo(ruta) {
-            let player = document.getElementById("videoPlayer");
-            player.src = ruta;
-            player.play();
-        }
-    </script>
+                    `;
+                };
+            </script>
             
         </div>
     </header>
