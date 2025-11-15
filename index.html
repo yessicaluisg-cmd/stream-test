@@ -4,18 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <style>
-        body{background-image: url(https://www.canaldelcongreso.gob.mx/images/light-hexagon-pattern.png); }
-        h1,p{text-align-last: center;}
-        .texto{
-            text-align-last: center;
-            margin: 0 auto;
-            width: 50%;
+        body {
+            background-image: url(https://www.canaldelcongreso.gob.mx/images/light-hexagon-pattern.png);
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* 🔥 ENCABEZADO */
+        header {
+            display: flex;
+            justify-content: space-between;   /* Logo izquierda | botones derecha */
+            align-items: center;
+            padding: 15px 30px;
+            background-color: white;
+            border-bottom: 2px solid #ccc;
+        }
+
+        /* 📌 BOTONES EN EL HEADER */
+        .botones-header {
+            display: flex;
+            gap: 15px;
         }
 
         button {
             padding: 10px 20px;
-            margin: 10px;
             font-size: 16px;
             border: none;
             color: white;
@@ -26,56 +41,68 @@
         #btnRojo { background-color: red; }
         #btnVerde { background-color: green; }
         #btnAzul { background-color: blue; }
+
+        /* 🔥 VIDEO CENTRADO ABAJO */
         #videoContainer {
-        margin-top: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
         }
     </style>
+
 </head>
+
 <body>
-    <header class="";>
-        <div id=""> 
-            <a>
-                <img  src="https://www.canaldelcongreso.gob.mx/images/logo-canal-congreso.png" whidth="506" height="100" alt="">
-                
-            </a>
-            <!-- Botones -->
+
+    <!-- ENCABEZADO COMPLETO -->
+    <header>
+        <!-- LOGO A LA IZQUIERDA -->
+        <img src="https://www.canaldelcongreso.gob.mx/images/logo-canal-congreso.png"
+             width="300" alt="">
+
+        <!-- BOTONES A LA DERECHA -->
+        <div class="botones-header">
             <button id="btnRojo">Video Rojo</button>
             <button id="btnVerde">Video Verde</button>
             <button id="btnAzul">Video Azul</button>
-        
-            <!-- Contenedor donde se cargará el iframe -->
-          <div id="videoContainer">
-                <iframe width="800" height="450" 
-                    src="https://www.youtube.com/embed/VIDEO_ID_2" 
-                    frameborder="0" allowfullscreen>
-                </iframe>
-            </div>
-        
-            <script>
-                document.getElementById("btnRojo").onclick = function () {
-                    document.getElementById("videoContainer").innerHTML = `
-                                <iframe width="1198" height="674" src="https://www.youtube.com/embed/gi106hzoCuw" title="Looney Tunes en Latino | Le Mejor de Daffy Duck y Porky Pig | WB Kids" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    `;
-                };
-        
-                document.getElementById("btnVerde").onclick = function () {
-                    document.getElementById("videoContainer").innerHTML = `
-                                <iframe width="1198" height="674" src="https://www.youtube.com/embed/HH8jJ68jqc0" title="DIRECTO | Félix Bolaños comparece en la Comisión de Justicia del Congreso | EL PAÍS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    `;
-                };
-        
-                document.getElementById("btnAzul").onclick = function () {
-                    document.getElementById("videoContainer").innerHTML = `
-                                <iframe width="1198" height="674" src="https://www.youtube.com/embed/WRJnVyqVGpc" title="El dilema de los celulares -TikTok, Snapchat, y cómo proteger a sus hijos | DW Documental" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    `;
-                };
-            </script>
-            
         </div>
     </header>
-      
-    </body>
+
+    <!-- VIDEO CENTRADO -->
+    <div id="videoContainer">
+        <iframe width="900" height="500"
+            src="https://www.youtube.com/embed/HH8jJ68jqc0"
+            frameborder="0" allowfullscreen>
+        </iframe>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        document.getElementById("btnRojo").onclick = function () {
+            document.getElementById("videoContainer").innerHTML = `
+                <iframe width="900" height="500"
+                    src="https://www.youtube.com/embed/gi106hzoCuw"
+                    frameborder="0" allowfullscreen></iframe>
+            `;
+        };
+
+        document.getElementById("btnVerde").onclick = function () {
+            document.getElementById("videoContainer").innerHTML = `
+                <iframe width="900" height="500"
+                    src="https://www.youtube.com/embed/HH8jJ68jqc0"
+                    frameborder="0" allowfullscreen></iframe>
+            `;
+        };
+
+        document.getElementById("btnAzul").onclick = function () {
+            document.getElementById("videoContainer").innerHTML = `
+                <iframe width="900" height="500"
+                    src="https://www.youtube.com/embed/WRJnVyqVGpc"
+                    frameborder="0" allowfullscreen></iframe>
+            `;
+        };
+    </script>
+
+</body>
 </html>
+
