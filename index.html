@@ -27,7 +27,10 @@
         #btnVerde { background-color: green; }
         #btnAzul { background-color: blue; }
         #videoContainer {
-            margin-top: 20px;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         }
     </style>
 </head>
@@ -44,7 +47,12 @@
             <button id="btnAzul">Video Azul</button>
         
             <!-- Contenedor donde se cargará el iframe -->
-            <div id="videoContainer"></div>
+          <div id="videoContainer">
+                <iframe width="800" height="450" 
+                    src="https://www.youtube.com/embed/VIDEO_ID_2" 
+                    frameborder="0" allowfullscreen>
+                </iframe>
+            </div>
         
             <script>
                 document.getElementById("btnRojo").onclick = function () {
@@ -68,13 +76,6 @@
             
         </div>
     </header>
-        
-    <h1>PRUBAS DE VIDEO Y AUDIO </h1>
-   
-    <div style="text-align: center;">
-        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fyessi.luis.225262%2Fvideos%2F1213818794135993%2F&width=1280" width="1280" height="720" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-        
-    </div>
-    
+      
     </body>
 </html>
